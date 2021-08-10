@@ -1,10 +1,21 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-function App() { return (
-    <div>
-      <Typography variant='h2' component='h2' data-test='heading'>
-        Bookish
-      </Typography>
-    </div> );
+
+import BookListContainer from './BookListContainer'
+import {Route, Switch} from 'react-router-dom';
+import BookDetailContainer from './BookDetailContainer';
+
+const App = () => {
+  return (
+      <div>
+        <Typography variant='h2' component='h2' data-test='heading'>
+          Bookish
+        </Typography>
+        <Switch>
+          <Route exact path='/' component={BookListContainer}/>
+          <Route path='/books/:id' component={BookDetailContainer}/>
+        </Switch>
+      </div>);
 }
+
 export default App;
