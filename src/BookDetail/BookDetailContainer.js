@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {useRemoteService} from "./hooks";
+import {useRemoteService} from "../hooks";
 import BookDetail from "./BookDetail";
 
 const BookDetailContainer = ({match}) => {

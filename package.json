@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open",
-    "stub-server": "json-server --watch db.json --port 8080"
+    "stub-server": "json-server --watch books.json --port 8080"
   },
   "eslintConfig": {
     "extends": [

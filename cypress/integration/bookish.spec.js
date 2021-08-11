@@ -6,22 +6,6 @@ describe('Bookish application', function () {
         .delete('http://localhost:8080/books?_cleanup=true')
         .catch((err) => err);
   });
-  afterEach(() => {
-    return axios
-        .delete('http://localhost:8080/books?_cleanup=true')
-        .catch(err => err)
-  })
-  beforeEach(() => {
-    const books = [
-      {'name': 'Refactoring', 'id': 1},
-      {'name': 'Domain-driven design', 'id': 2},
-      {'name': 'Building Microservices', 'id': 3}
-    ]
-    return books.map(item => axios.post('http://localhost:8080/books', item,
-            {headers: {'Content-Type': 'application/json'}}
-        )
-    )
-  })
 
   it('Shows a book list', () => {
     cy.visit('http://localhost:3000/');
