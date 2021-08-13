@@ -8,10 +8,12 @@
     "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@testing-library/user-event": "^13.2.1",
     "axios": "^0.21.1",
     "json-server": "^0.16.3",
     "jsonpath": "^1.1.1",
+    "lodash.clone": "^4.5.0",
+    "lodash.isempty": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
@@ -26,7 +28,7 @@
     "eject": "react-scripts eject",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open",
-    "stub-server": "json-server --watch books.json --port 8080"
+    "stub-server": "json-server --watch stub-server/books.json --port 8080"
   },
   "eslintConfig": {
     "extends": [

@@ -2,6 +2,7 @@ import React from 'react'
 import {render} from '@testing-library/react'
 import {MemoryRouter as Router} from 'react-router-dom';
 import BookList from './BookList';
+import BookDetail from "../BookDetail/BookDetail";
 
 const renderWithRouter = (component) => {
   return {
@@ -40,6 +41,17 @@ describe('BookList', () => {
     const {container} = renderWithRouter(<BookList {...props} />);
     const titles = [...container.querySelectorAll('h2')].map(x => x.innerHTML);
     expect(titles).toEqual(['Refactoring', 'Domain-driven design']);
+  })
+
+  it('displays the book name when no description was given', () => {
+    const props = {
+      book: {
+        name: 'Refactoring'
+      }
+    }
+    const { container } = render(<BookDetail {...props} />);
+    const description = container.querySelector('p.book-description');
+    expect(description.innerHTML).toEqual(props.book.name);
   })
 
 });
